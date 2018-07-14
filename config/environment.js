@@ -6,6 +6,17 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
+    firebase: {
+      apiKey: "AIzaSyBQwI6nE_X2XyMvhTSfoM0NjrxACGgYGs4",
+      authDomain: "desafio-peerdustry.firebaseapp.com",
+      databaseURL: "https://desafio-peerdustry.firebaseio.com",
+      projectId: "desafio-peerdustry",
+      storageBucket: "desafio-peerdustry.appspot.com",
+      messagingSenderId: "576054039447"
+    },
+
+    
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
