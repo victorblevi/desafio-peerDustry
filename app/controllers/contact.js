@@ -12,10 +12,16 @@ export default Controller.extend({
     actions: {
 
         saveInvitation() {
-            alert(`Sending your message in progress... ${this.get('emailAddress')} ${this.get('message')}`);
-            this.set('responseMessage', `We got your message and we’ll get in touch soon`);
-            this.set('emailAddress', '');
-            this.set('message', '');
+            const email = this.get('emailAddress')
+            const message = this.get('emailAddress')
+
+            const saveContact = this.store.createRecord('contact', { email, message })
+            saveContact.save()
+                .then(() => {
+                    this.set('responseMessage', `We got your message and we’ll get in touch soon`)
+                    this.set('emailAddress', '')
+                    this.set('message', '');
+                })
         }
     }
 
