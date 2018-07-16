@@ -1,11 +1,20 @@
 'use strict';
 
-module.exports = function(environment) {
+
+
+module.exports = function (environment) {
+  
+  if (environment === 'production') {
+    ENV['ember-faker'] = {
+      enabled: true
+    };
+  }
   let ENV = {
     modulePrefix: 'library-app',
     environment,
     rootURL: '/',
     locationType: 'auto',
+
 
     firebase: {
       apiKey: "AIzaSyBQwI6nE_X2XyMvhTSfoM0NjrxACGgYGs4",
@@ -16,7 +25,7 @@ module.exports = function(environment) {
       messagingSenderId: "576054039447"
     },
 
-    
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
