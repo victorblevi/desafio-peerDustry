@@ -15,12 +15,11 @@ export default Controller.extend({
       let savedLibraries = [];
 
       for (let i = 0; i < counter; i++) {
-
-        // Collect all Promise in an array
+          
         savedLibraries.push(this._saveRandomLibrary());
       }
 
-      // Wait for all Promise to fulfill so we can show our label and turn off the spinner.
+    
       all(savedLibraries)
         .then(() => {
           this.set('generateLibrariesInProgress', false);
